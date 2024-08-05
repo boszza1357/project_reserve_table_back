@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ยืนยันการชำระเงิน</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>ยืนยันการชำระเงิน</h2>
+    </div>
+    <div class="content">
+      <p>เราขอยืนยันการชำระเงินของคุณดังนี้:</p>
+      <p>{DETAIL}</p> <!-- แทนที่แท็กนี้ด้วยข้อมูลการจอง -->
+      <div>
+    <img src="https://quickchart.io/qr?text=Hello%20world&size=400" alt="">
+  	</div>
+      <p>ขอบคุณที่ใช้บริการของเรา หากมีข้อสงสัยเพิ่มเติมกรุณาติดต่อเรา</p>
+    </div>
+    <div class="footer">
+      <p>ขอบคุณที่ใช้บริการของเรา</p>
+      <p>ทีมงานของเรา</p>
+    </div>
+  </div>
+</body>
+</html>
