@@ -61,38 +61,7 @@ public class TableController {
 		return response;
 	}
 	
-	@GetMapping("/getTableTypeById")
-	public ResponseModel getTableTypeById(@RequestParam (name ="tableTypeId")Integer tableTypeId) {
-		ResponseModel response = new ResponseModel();
-		
-		try {
-			// service
-			response.setData(tableService.getTableTypeById(tableTypeId));
-			response.setStatus("SUCCESS");
-		} catch (Exception e) {
-			// TODO: handle exception
-			response.setStatus("ERROR");
-			response.setMessage(e.getMessage());
-		}
 
-		return response;
-	}
-	@GetMapping("/getTableTypeAll")
-	public ResponseModel getTableTypeAll() {
-		ResponseModel response = new ResponseModel();
-		
-		try {
-			// service
-			response.setData(tableService.getTableTypeAll());
-			response.setStatus("SUCCESS");
-		} catch (Exception e) {
-			// TODO: handle exception
-			response.setStatus("ERROR");
-			response.setMessage(e.getMessage());
-		}
-
-		return response;
-	}
 	
 	@GetMapping("/getTableImgByTableId")
 	public ResponseModel getTableImgByTableId(@RequestParam(name = "tableId") Integer tableId) {

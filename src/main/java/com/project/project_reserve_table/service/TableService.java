@@ -18,6 +18,7 @@ import com.project.project_reserve_table.entity.TableTypeEntity;
 import com.project.project_reserve_table.model.TablesImgResponseModel;
 import com.project.project_reserve_table.model.TablesRequsetModel;
 import com.project.project_reserve_table.model.TablesResponseModel;
+import com.project.project_reserve_table.model.TablesTypeRequsetModel;
 import com.project.project_reserve_table.model.TablesTypeResponseModel;
 import com.project.project_reserve_table.repository.TableImgRepository;
 import com.project.project_reserve_table.repository.TableRepository;
@@ -31,6 +32,9 @@ import jakarta.transaction.Transactional;
 
 @Service
 public class TableService {
+	
+	
+
 
 	@Autowired
 	private TableRepository  tableRepository;
@@ -177,57 +181,7 @@ public class TableService {
 		return response;
 	}
 	
-	public TablesTypeResponseModel getTableTypeById(Integer tableTypeId){
-		
-		TablesTypeResponseModel response = null;
-		
-		
-		Optional<TableTypeEntity> entity = tabletypeRepository.findById(tableTypeId);
-		
-		if(entity.isPresent()) {
-			
-			TableTypeEntity tabletype = entity.get();
-			
-			response = new TablesTypeResponseModel() ;
-			
-			response.setTablesTypeId(tabletype.getId());
-			response.setTablesTypeName(tabletype.getTablesTypeName());
-			response.setTablesTypeDesc(tabletype.getTablesTypeDesc());
-			response.setStatus(tabletype.getStatus());
-			
-		}
-		
-		return response;
-		}
-		
-		
-	
-	
-	public List<TablesTypeResponseModel> getTableTypeAll(){
-		List<TablesTypeResponseModel> response = null;
-		
-		List<TableTypeEntity> tableImgList = tabletypeRepository.findAll();
-		
-		if(null != tableImgList) {
-			
-			response = new ArrayList<>();
-			
-			for(TableTypeEntity tabletype : tableImgList) {
-				
-				TablesTypeResponseModel objectResponse = new TablesTypeResponseModel();
-				
-				objectResponse.setTablesTypeId(tabletype.getId());
-				objectResponse.setTablesTypeName(tabletype.getTablesTypeName());
-				objectResponse.setTablesTypeDesc(tabletype.getTablesTypeDesc());
-				objectResponse.setStatus(tabletype.getStatus());
-				
-				
-				response.add(objectResponse);
-			}
-		}
-		
-		return response;
-	}
+
 	
 	public List<TablesImgResponseModel> getProductImgByProductId(Integer tableId){
 		List<TablesImgResponseModel> response = null;
